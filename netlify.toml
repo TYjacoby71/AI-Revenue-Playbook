@@ -8,7 +8,9 @@
 # Stripe webhook endpoint (register in Stripe dashboard once deployed):
 #   https://<site>.netlify.app/.netlify/functions/stripe-webhook
 # Required env vars (set in Netlify dashboard > Site settings > Environment):
-#   STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, EMAIL_API_KEY, FROM_EMAIL, DOWNLOAD_URL
+#   STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, EMAIL_API_KEY, FROM_EMAIL
+#   DOWNLOAD_URL = https://<site>.netlify.app/emergency-cashflow-playbook.pdf
+#   (PDF is deployed at src/emergency-cashflow-playbook.pdf → published as /emergency-cashflow-playbook.pdf)
 #
 # Stripe product: prod_UIdeG7Tr41hRjx (Emergency Cashflow Playbook, $47)
 # Stripe price:   price_1TK2NCFU1PN3YsywokmbnLwL
