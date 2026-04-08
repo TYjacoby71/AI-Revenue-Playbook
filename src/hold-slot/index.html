@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergency Cashflow Playbook – Invoice / ACH Request</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --accent: #ff5b1f;
+      --bg: #0f1115;
+      --panel: #1a1d23;
+      --muted: #8b8f9c;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #090b10, #151925);
+      color: #f3f5ff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+    .shell {
+      width: min(720px, 100%);
+      background: rgba(15, 18, 25, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      padding: 40px;
+      backdrop-filter: blur(12px);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: clamp(28px, 4vw, 36px);
+      line-height: 1.1;
+    }
+    p.lede {
+      font-size: 1.05rem;
+      color: #cdd1de;
+      margin-bottom: 24px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 91, 31, 0.12);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    form {
+      margin-top: 28px;
+      display: grid;
+      gap: 18px;
+    }
+    label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(12, 15, 20, 0.8);
+      color: #fefefe;
+      font-size: 1rem;
+      transition: border 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 91, 31, 0.2);
+    }
+    .row {
+      display: grid;
+      gap: 18px;
+    }
+    @media (min-width: 600px) {
+      .row.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    button {
+      padding: 16px 28px;
+      background: linear-gradient(120deg, #ff7a1f, #ff3d54);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(255, 63, 84, 0.35);
+    }
+    .footnote {
+      font-size: 0.85rem;
+      color: #9fa5b9;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+    .notice {
+      padding: 16px 20px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .back-link:hover { color: #f3f5ff; }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <a class="back-link" href="../">&larr; Back to playbook</a>
+    <div class="badge">Invoice / ACH · $47</div>
+    <h1>Request an invoice for the Emergency Cashflow Playbook</h1>
+    <p class="lede">
+      Prefer to pay by invoice, ACH, or wire? Fill out the brief below. We will send a $47 invoice within 30 minutes and deliver the playbook PDF immediately after payment clears.
+    </p>
+
+    <div class="notice">
+      <strong>What happens next:</strong> you will receive an invoice by email within 30 minutes. The Emergency Cashflow Playbook PDF is delivered automatically as soon as payment clears.
+    </div>
+
+    <form name="emergency-session-prebooking" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="emergency-session-prebooking" />
+      <p hidden>
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+
+      <div class="row two">
+        <div>
+          <label for="founder">Your name</label>
+          <input id="founder" name="founder" type="text" placeholder="Jane Smith" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="jane@example.com" required />
+        </div>
+      </div>
+
+      <div class="row two">
+        <div>
+          <label for="company">Company / Project</label>
+          <input id="company" name="company" type="text" placeholder="Acme Inc." />
+        </div>
+        <div>
+          <label for="payment-method">Payment method</label>
+          <select id="payment-method" name="payment_method" required>
+            <option value="">Select</option>
+            <option value="ach">ACH transfer</option>
+            <option value="wire">Wire transfer</option>
+            <option value="stripe-invoice">Stripe invoice (card)</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="notes">Anything we should know? (optional)</label>
+        <textarea id="notes" name="notes" placeholder="PO number, billing contact, special routing, etc."></textarea>
+      </div>
+
+      <div>
+        <label>
+          <input type="checkbox" name="terms" value="yes" required />
+          &nbsp;I understand the playbook PDF is delivered digitally after payment clears and agree to the refund policy: full refund if you don't find three executable cash plays.
+        </label>
+      </div>
+
+      <button type="submit">Request Invoice →</button>
+      <p class="footnote">
+        Questions? Email <strong><a href="mailto:hello@cashflow.so">hello@cashflow.so</a></strong> and we'll get back to you immediately.
+      </p>
+    </form>
+  </main>
+</body>
+</html>
