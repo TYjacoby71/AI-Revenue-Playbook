@@ -7,7 +7,7 @@
  * Environment variables required (set in Netlify dashboard > Site settings > Environment):
  *   STRIPE_SECRET_KEY       — sk_live_... (Stripe secret key)
  *   STRIPE_WEBHOOK_SECRET   — whsec_... (from Stripe dashboard > Webhooks)
- *   POSTMARK_API_TOKEN      — (postmark-token-rotated)
+ *   POSTMARK_API_TOKEN      — (set in Netlify dashboard, never commit the value)
  *   DOWNLOAD_URL            — The URL of the digital product PDF/ZIP to deliver
  *                             (set after CMO finalizes the digital product — NOD-132)
  *
