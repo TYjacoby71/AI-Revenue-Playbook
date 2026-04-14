@@ -8,7 +8,8 @@
 # Stripe webhook endpoint (register in Stripe dashboard once deployed):
 #   https://<site>.netlify.app/.netlify/functions/stripe-webhook
 # Required env vars (set in Netlify dashboard > Site settings > Environment):
-#   STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, EMAIL_API_KEY, FROM_EMAIL
+#   STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET
+#   POSTMARK_API_TOKEN = 5662aaf9-... (Postmark server token — board confirmed set in Netlify)
 #   DOWNLOAD_URL = https://<site>.netlify.app/ai-revenue-playbook.pdf
 #   (AI Revenue Playbook PDF at src/ai-revenue-playbook.pdf → published as /ai-revenue-playbook.pdf)
 #   (src/ai-revenue-playbook.html also present as web-readable version)
